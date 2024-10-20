@@ -185,7 +185,7 @@ public:
         }
         return res;
     }
-    T operator*(const TDynamicVector& v) noexcept(noexcept(T()))
+    T operator*(const TDynamicVector& v)
     {
         if (sz != v.sz)
             throw ("vectors with different sizes");
@@ -363,10 +363,7 @@ public:
     {
         for (size_t i = 0; i < v.sz; i++) 
         {
-            for (size_t j = 0; j < v.sz; j++) 
-            {
-                ostr << v.pMem[i][j] << ' ';
-            }
+            ostr << v.pMem[i] << '\n';
         }
         return ostr;
     }
